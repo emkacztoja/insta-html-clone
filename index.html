@@ -96,7 +96,6 @@
                 </div>
                 <ion-icon name="chevron-forward-circle-sharp" id="seta"></ion-icon>
             </div>
-
             <div class="posts">
                 <div class="post">
                     <div class="post-top">
@@ -110,11 +109,11 @@
                     <img src="assets/img/emkacztojapost.jpg" class="imagem" alt="gato-telefone">
                     <div class="post-interactions">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon name="heart-outline" id="post1-like"></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                            <ion-icon name="bookmark-outline" id="post1-bookmark"></ion-icon>
                     </div>
                     <div class="likes">
                         <img src="assets/img/tofifi21_pfp.jpg"> 
@@ -148,11 +147,11 @@
                     <img src="assets/img/kawasakiworldpost.jpg" class="imagem">
                     <div class="post-interactions">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon name="heart-outline" id="post2-like"></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
-                            <ion-icon name="bookmark-outline"></ion-icon>
+                            <ion-icon name="bookmark-outline" id="post2-bookmark"></ion-icon>
                     </div>
                     <div class="likes">
                         <img src="assets/img/racekawasakipfp.jpg"> 
@@ -186,11 +185,11 @@
                     <img src="assets/img/f1racing_memespost.jpg" class="imagem">
                     <div class="post-interactions">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon name="heart-outline" id="post3-like"></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
-                            <ion-icon name="bookmark-outline"></ion-icon>
+                            <ion-icon name="bookmark-outline" id="post3-bookmark"></ion-icon>
                     </div>
                     <div class="likes">
                         <img src="assets/img/f1pfp.jpg"> 
@@ -298,6 +297,64 @@
         <ion-icon name="person-outline"></ion-icon>
     </footer>
 
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+<!-- ==========SCRIPT SECTION========== -->
+
+<!--ionicons script-->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> 
+
+<!--like buttons script script-->
+    <script>
+        function toggleLike(postId) {
+            const likeIcon = document.getElementById(postId + '-like');
+    
+            if (likeIcon.name === 'heart-outline') {
+                likeIcon.name = 'heart';
+                likeIcon.style.color = 'red';
+            } else {
+                likeIcon.name = 'heart-outline';
+                likeIcon.style.color = 'black';
+            }
+        }
+    
+        document.getElementById('post1-like').addEventListener('click', function() {
+            toggleLike('post1');
+        });
+
+        document.getElementById('post2-like').addEventListener('click', function() {
+            toggleLike('post2');
+        });
+
+        document.getElementById('post3-like').addEventListener('click', function() {
+            toggleLike('post3');
+        });
+    </script>
+
+<!--bookmark buttons script-->
+    <script>
+        function toggleBookmark(postId) {
+            const bookmarkIcon = document.getElementById(postId + '-bookmark');
+    
+            if (bookmarkIcon.name === 'bookmark-outline') {
+                bookmarkIcon.name = 'bookmark';
+            } else {
+                bookmarkIcon.name = 'bookmark-outline';
+            }
+        }
+    
+        document.getElementById('post1-bookmark').addEventListener('click', function() {
+            toggleBookmark('post1');
+        });
+        document.getElementById('post2-bookmark').addEventListener('click', function() {
+            toggleBookmark('post2');
+        });
+        document.getElementById('post3-bookmark').addEventListener('click', function() {
+            toggleBookmark('post3');
+        });
+    </script>
+    
+    
+    
+    
+    
 </body>
 </html>
